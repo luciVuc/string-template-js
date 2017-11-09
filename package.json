@@ -1,0 +1,45 @@
+{
+  "name": "string-template-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint bin/*",
+    "test": "mocha test/index.js"
+  },
+  "description": "A tiny string templating utility",
+  "devDependencies": {
+    "eslint": "3.19.0",
+    "mocha": "^4.0.1",
+    "unit": "0.0.1-alpha",
+    "unit.js": "^2.0.0"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true,
+      "es6": true
+    }
+  },
+  "files": [
+    "index.js"
+  ],
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "keywords": [
+    "string template",
+    "template",
+    "string template literal"
+  ],
+  "author": "Lucian Vuc",
+  "homepage": "https://github.com/luciVuc/string-template-js#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luciVuc/string-template-js.git"
+  }
+}
