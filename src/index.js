@@ -1,12 +1,3 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-exports.replace = replace;
 /**
  * String templating utility.
  */
@@ -21,7 +12,7 @@ exports.replace = replace;
  * @param {Object} mData a JS object (hashmap) containing the actual values to replace the template placeholders with.
  * @returns {string}
  */
-function replace(sTemplate, mData) {
+export function replace(sTemplate, mData) {
   if (typeof sTemplate === "string") {
     // mData = mData instanceof Object ? mData : {};
     mData = mData ? mData : {};
@@ -31,7 +22,7 @@ function replace(sTemplate, mData) {
         val = val();
       } else if (val === null || val === undefined) {
         val = "";
-      } else if ((typeof val === "undefined" ? "undefined" : _typeof(val)) === "object" || (typeof val === "undefined" ? "undefined" : _typeof(val)) === "symbol") {
+      } else if (typeof val === "object" || typeof val === "symbol") {
         val = val.toString();
       } else {
         val = val.valueOf();
