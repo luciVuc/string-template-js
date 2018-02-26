@@ -1,13 +1,14 @@
 {
   "name": "string-template-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/",
     "build": "npm run lint && babel src/index.js --out-file index.js",
-    "test": "npm run build && mocha test/index.js"
+    "test": "npm run build && mocha test/index.js",
+    "jsdoc": "jsdoc src/index.js"
   },
-  "description": "A string-templating utility",
+  "description": "String-templating utility that creates new string literals based on templates and embedded expressions (or values).",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1"
@@ -16,8 +17,8 @@
     "babel-cli": "^6.26.0",
     "babelify": "^8.0.0",
     "eslint": "^4.18.1",
-    "mocha": "^4.0.1",
-    "unit.js": "^2.0.0"
+    "jsdoc": "^3.5.5",
+    "mocha": "^4.0.1"
   },
   "eslintConfig": {
     "env": {

@@ -8,18 +8,17 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 exports.replace = replace;
 /**
- * String templating utility.
- */
-/**
- * It creates and returns a new string based on a given template string and a set of actual values.
- * The set of actual values is a JS object (a hashmap of key-value pairs), whereas the template string
- * is a string that contains placeholders, which similar to the `ES6 Literal Templates`, will be replaced with actual values.
- * A placeholder is an identifier enclosed within curly braces and preceded by amd the 'Dollar' sign (`${expression}`),
- * which matches a key in the hashmap of actual values.
+ * String templating utility that creates new string literals based on templates and embedded expressions (or values).
+ * A template is given as a string, which similar to the `ES6 Literal Templates` contains
+ * placeholders that will be replaced with actual values or expressions, whereas the actual values or
+ * expressions are given as properties of a JS object (a hashmap of key-value pairs).
+ * A placeholder is an identifier enclosed within curly braces and preceded by the 'Dollar' sign
+ * (`${expression}`), which is expected to match the reference to the actual value or expression.
  * 
- * @param {string} sTemplate The string template, which, similar to the ES6 literal templates can contain value placeholders enclosed within curly braces and preceded by the 'Dollar' sign (`${expression}`)
- * @param {Object} mData a JS object (hashmap) containing the actual values to replace the template placeholders with.
- * @returns {string}
+ * @export
+ * @param {String} sTemplate The string template, which, similar to the ES6 literal templates can contain value placeholders enclosed within curly braces and preceded by the 'Dollar' sign (`${expression}`)
+ * @param {Object} mData The JS object (hashmap) containing the actual values and expressions to replace the template placeholders with.
+ * @returns {String}
  */
 function replace(sTemplate, mData) {
   if (typeof sTemplate === "string") {
@@ -41,3 +40,4 @@ function replace(sTemplate, mData) {
   }
   return "";
 }
+// export default replace;
