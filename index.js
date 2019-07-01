@@ -1,12 +1,3 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-exports.replace = replace;
 /**
  * String templating utility that creates new string literals based on templates and embedded expressions (or values).
  * A template is given as a string, which similar to the `ES6 Literal Templates` contains
@@ -25,19 +16,26 @@ function replace(sTemplate, mData) {
     // mData = mData instanceof Object ? mData : {};
     mData = mData ? mData : {};
     return sTemplate.replace(/\$\{\s*([$#@\-\d\w]+)\s*\}/gim, function (fullMath, grp) {
-      var val = mData[grp];
+      let val = mData[grp];
+
       if (typeof val === "function") {
         val = val();
       } else if (val === null || val === undefined) {
         val = "";
-      } else if ((typeof val === "undefined" ? "undefined" : _typeof(val)) === "object" || (typeof val === "undefined" ? "undefined" : _typeof(val)) === "symbol") {
+      } else if (typeof val === "object" || typeof val === "symbol") {
         val = val.toString();
       } else {
         val = val.valueOf();
       }
+
       return val;
     });
   }
+
   return "";
-}
-// export default replace;
+} // export default replace;
+
+
+module.exports = {
+  replace: replace
+};

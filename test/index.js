@@ -17,7 +17,12 @@ describe('string-template-js', function() {
     }}) === '2 x 3 = 6');    
   });
 
-  it('if an actual value is undefined it replaces the placeholder in the template with an empty string.', function() {
+  it('replaces the placeholder in the template with an empty string if the actual value is `undefined`.', function() {
     assert(stringTemplate.replace('Hello ${name}!') === 'Hello !');
+  });
+
+  it('creates an HTML string from an HTML template.', function() {
+    const date = Date();
+    assert(stringTemplate.replace('<div><h1>Welcome</h1><p>Today is ${today}</p></div>', { today: date }) === '<div><h1>Welcome</h1><p>Today is ' + date + '</p></div>');
   });
 });

@@ -37,7 +37,7 @@ stringTemplate.replace("Hello ${value}!", { value: function() { return "world"; 
 
 ## Version
 
-1.0.2
+1.0.3
 
 ## License
 

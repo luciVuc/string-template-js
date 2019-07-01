@@ -11,12 +11,12 @@
  * @param {Object} mData The JS object (hashmap) containing the actual values and expressions to replace the template placeholders with.
  * @returns {String}
  */
-export function replace(sTemplate, mData) {
+function replace(sTemplate, mData) {
   if (typeof sTemplate === "string") {
     // mData = mData instanceof Object ? mData : {};
     mData = mData ? mData : {};
     return sTemplate.replace(/\$\{\s*([$#@\-\d\w]+)\s*\}/gim, function (fullMath, grp) {
-      var val = mData[grp];
+      let val = mData[grp];
       if (typeof val === "function") {
         val = val();
       } else if (val === null || val === undefined) {
@@ -31,4 +31,8 @@ export function replace(sTemplate, mData) {
   }
   return "";
 }
+
 // export default replace;
+module.exports = {
+  replace: replace
+};
