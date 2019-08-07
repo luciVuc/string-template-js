@@ -66,8 +66,8 @@
     "template",
     "string template literal"
   ],
-  "author": "Lucian Vuc",
-  "homepage": "https://github.com/luciVuc/string-template-js#readme",
+  "author": "Lucian Vuc (https://lucivuc.github.io/)",
+  "homepage": "https://lucivuc.github.io/string-template-js",
   "license": "MIT",
   "repository": {
     "type": "git",
