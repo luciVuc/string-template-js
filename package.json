@@ -1,6 +1,6 @@
 {
   "name": "string-template-js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/",
